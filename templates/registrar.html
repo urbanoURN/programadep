@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>REGISTRO_DEPORTIS</title>
+</head>
+<body>  
+    <script>
+
+        document.body.style.backgroundColor = "#50F2A9";
+    
+    </script>
+
+    <form action="/guardardepor" method="post" enctype="multipart/form-data">
+        <h1> REGISTAR NUEVO DEPORTISTA</h1>
+        <br>
+        <br>
+        <br>
+
+        <div class="container">
+            <form>
+
+                <div class="form-group col-md.4">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" required name="id" id="id">
+                </div>
+
+                <div class="form-group col-md.4">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" required name="nombre" id="nombre">
+                </div>
+               
+                <div class="form-group col-md.4">
+                    <label for="estatura">Estatura</label>
+                    <input type="text" class="form-control" required name="estatura" id="estatura">
+                </div>
+
+                <div class="form-group col-md.4">
+                    <label for="peso">Peso</label>
+                    <input type="text" class="form-control" required name="peso" id="peso">
+                </div>
+
+                <div>
+                    <label for="fecha_naci">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" required name="fecha_naci" id="fecha_naci">
+                </div>
+
+                <div class="form-group text-center cold-md-8">
+                    <div class="btn btn-info">     
+                        <a href="/">Cancelar</a>
+                    </div> 
+                    <div>
+                        <input type="submit" value="Guardar">
+                        <a href="/todos">VER DEPORTISTA</a>
+                    </div>
+                </div>
+
+
+            </form>
+    
+
+        </div>
+
+    </form>
+    
+</body>
+
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODOS LOS DEPORTISTA</title>
+</head>
+<body>
+    
+    <script>
+
+        document.body.style.backgroundColor = "#50F2A9";
+    
+    </script>
+
+    <a href="/registrar">Agregar un nuevo artículo</a>
+    &nabla;&nedot;&nedot;&nedot;&nabla;
+    <br><br>
+    <br>
+    <table border="-">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>PESO</th>
+                <th>ESTATURA</th>
+                <th>FECHA DE NACIMIENTO</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dep in res %}
+                <tr>
+                    <td>{{dep[0]}}</td>
+                    <td>{{dep[1]}}</td>
+                    <td>{{dep[2]}}</td>
+                    <td>{{dep[3]}}</td>
+                    <td>{{dep[4]}}</td>
+                    <td>
+                        <!--<img class="img-thumbnail" width="100" height="100" src="uploads/{{art[4]}}" alt="">-->
+                    </td>
+                    <td>
+                        <!--<a href="editararticulo/{{art[0]}}">Editar</a>-->
+                    </td>
+                    <td>
+                        <a onclick="return confirm('¿Seguro elimina este artículo?')" href="borrararticulo/{{art[0]}}">Eliminar</a>
+                    </td>    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
