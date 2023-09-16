@@ -41,10 +41,6 @@ def registrar():
     return render_template("registrar.html")
 
 
-@programa.route('/todos')
-def todos():
-    return render_template("todos.html")
-
 #interfas de todos los deportistas y agregar
 
 
@@ -61,8 +57,8 @@ def guardardepor():
     nombrefoto = "A"+ahora.strftime("%Y%m%d%H%M%S")+fextension
     print(foto.filename,nombrefoto)
     foto.save("uploads/"+nombrefoto)  
-    misdeportistas.agregar([id,nombre,estatura,peso,fecha_naci,foto])  
-    return redirect('/todos')
+    misdeportistas.agregar([id,nombre,estatura,peso,fecha_naci,nombrefoto])  
+    return redirect('/')
 
     
     
