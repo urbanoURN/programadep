@@ -31,18 +31,12 @@ def todosdep():
     resultado = misdeportistas.consultar()
     return render_template("todos.html", res=resultado)
 
-@programa.route('/deportistas')
-def deportistas():
-    return render_template("todos.html")
-
-
 @programa.route('/registrar')
 def registrar():
-    return render_template("registrar.html")
+    return render_template("registrar.html", msg="")
 
 
 #interfas de todos los deportistas y agregar
-
 
 @programa.route('/guardardepor', methods=['POST'])
 def guardardepor():
@@ -52,12 +46,14 @@ def guardardepor():
     peso = request.form['peso']
     fecha_naci = request.form['fecha_naci']
     foto = request.files['foto']
+    if misdeportistas.buscar(id):
+        return render_template("registrar.html",msg="Id de deportista YA registrado")
     ahora = datetime.now()
     nombre,fextension = os.path.splitext(foto.filename)
-    nombrefoto = "A"+ahora.strftime("%Y%m%d%H%M%S")+fextension
-    print(foto.filename,nombrefoto)
-    foto.save("uploads/"+nombrefoto)  
-    misdeportistas.agregar([id,nombre,estatura,peso,fecha_naci,nombrefoto])  
+    nombreFoto = "A"+ahora.strftime("%Y%m%d%H%M%S")+fextension
+    print(foto.filename,nombreFoto)
+    foto.save("uploads/"+nombreFoto)  
+    misdeportistas.agregar([id,nombre,estatura,peso,fecha_naci,nombreFoto])  
     return redirect('/')
 
     

@@ -16,3 +16,13 @@ class Deportistas:
         VALUE ('{deportista[0]}','{deportista[1]}','{deportista[2]}','{deportista[3]}','{deportista[4]}','{deportista[5]}')"
         self.vigilante.execute(sql)
         self.conexion.commit()
+
+    def buscar(self,id):
+        sql = f"SELECT id FROM deportistas WHERE id={id}"
+        self.vigilante.execute(sql)
+        resultado = self.vigilante.fetchall()
+        self.conexion.commit()
+        if len(resultado)>0:
+            return True
+        else:
+            return False
