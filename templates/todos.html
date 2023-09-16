@@ -26,6 +26,7 @@
                 <th>PESO</th>
                 <th>ESTATURA</th>
                 <th>FECHA DE NACIMIENTO</th>
+                <th>FOTO</th>
             </tr>
         </thead>
         <tbody>
@@ -37,13 +38,13 @@
                     <td>{{dep[3]}}</td>
                     <td>{{dep[4]}}</td>
                     <td>
-                        <!--<img class="img-thumbnail" width="100" height="100" src="uploads/{{art[4]}}" alt="">-->
+                        <img class="img-thumbnail" width="100" height="100" src="uploads/{{dep[4]}}" alt="">
                     </td>
                     <td>
-                        <!--<a href="editararticulo/{{art[0]}}">Editar</a>-->
+                        <a href="editararticulo/{{dep[0]}}">Editar</a>
                     </td>
                     <td>
-                        <a onclick="return confirm('¿Seguro elimina este artículo?')" href="borrararticulo/{{art[0]}}">Eliminar</a>
+                        <a onclick="return confirm('¿Seguro elimina este artículo?')" href="borrararticulo/{{dep[0]}}">Eliminar</a>
                     </td>    
                 </tr>
             {% endfor %}

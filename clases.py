@@ -12,7 +12,7 @@ class Deportistas:
         return resultado
     
     def agregar(self,deportista):
-        sql = f"INSERT INTO deportistas (id,nombre,estatura,peso,fecha_naci)\
-        VALUE ('{deportista[0]}','{deportista[1]}','{deportista[2]}','{deportista[3]}','{deportista[4]}')"
+        sql = f"INSERT INTO deportistas (id,nombre,estatura,peso,fecha_naci,foto)\
+        VALUE ('{deportista[0]}','{deportista[1]}','{deportista[2]}','{deportista[3]}','{deportista[4]}','{deportista[5]}')"
         self.vigilante.execute(sql)
         self.conexion.commit()

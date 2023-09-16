@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>REGISTRO_DEPORTIS</title>
+    <style>
+      
+        .container {
+            width: 1000px; 
+            padding: 15px;
+            border: 1px solid #178ebd;
+            border-radius: 5px;
+        }
+        .centrar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+        }
+
+        
+
+    </style>
+
 </head>
 <body>  
     <script>
@@ -14,7 +34,9 @@
     </script>
 
     <form action="/guardardepor" method="post" enctype="multipart/form-data">
+        <div class="centrar">
         <h1> REGISTAR NUEVO DEPORTISTA</h1>
+        </div>
         <br>
         <br>
         <br>
@@ -22,29 +44,34 @@
         <div class="container">
             <form>
 
-                <div class="form-group col-md.4">
+                <div class="form-group col-md-4">
                     <label for="id">ID</label>
                     <input type="text" class="form-control" required name="id" id="id">
                 </div>
 
-                <div class="form-group col-md.4">
+                <div class="form-group col-md-4">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" required name="nombre" id="nombre">
                 </div>
                
-                <div class="form-group col-md.4">
+                <div class="form-group col-md-4">
                     <label for="estatura">Estatura</label>
                     <input type="text" class="form-control" required name="estatura" id="estatura">
                 </div>
 
-                <div class="form-group col-md.4">
+                <div class="form-group col-md-4">
                     <label for="peso">Peso</label>
                     <input type="text" class="form-control" required name="peso" id="peso">
                 </div>
 
-                <div>
+                <div class="form-group col-md-2">
                     <label for="fecha_naci">Fecha de Nacimiento</label>
                     <input type="date" class="form-control" required name="fecha_naci" id="fecha_naci">
+                </div>
+
+                <div class="col-md-5">
+                    <label for="foto">Foto:</label>
+                    <input class="form-control" type="file" id="foto" name="foto" >
                 </div>
 
                 <div class="form-group text-center cold-md-8">
@@ -53,10 +80,11 @@
                     </div> 
                     <div>
                         <input type="submit" value="Guardar">
-                        <a href="/todos">VER DEPORTISTA</a>
+                        <a href="/">VER DEPORTISTA</a>
                     </div>
                 </div>
 
+            
 
             </form>
     
