@@ -41,7 +41,7 @@ def registrar():
 @programa.route('/guardardepor', methods=['POST'])
 def guardardepor():
     id = request.form['id']
-    nombre = request.form['nombre']
+    nombre_dep= request.form['nombre']
     estatura = request.form['estatura']
     peso = request.form['peso']
     fecha_naci = request.form['fecha_naci']
@@ -49,11 +49,11 @@ def guardardepor():
     if misdeportistas.buscar(id):
         return render_template("registrar.html",msg="Id de deportista YA registrado")
     ahora = datetime.now()
-    nombre,fextension = os.path.splitext(foto.filename)
+    nombre_foto,fextension = os.path.splitext(foto.filename)
     nombreFoto = "A"+ahora.strftime("%Y%m%d%H%M%S")+fextension
     print(foto.filename,nombreFoto)
     foto.save("uploads/"+nombreFoto)  
-    misdeportistas.agregar([id,nombre,estatura,peso,fecha_naci,nombreFoto])  
+    misdeportistas.agregar([id,nombre_dep,estatura,peso,fecha_naci,nombreFoto])  
     return redirect('/')
 
     
